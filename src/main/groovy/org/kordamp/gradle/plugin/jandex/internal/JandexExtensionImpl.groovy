@@ -33,6 +33,6 @@ class JandexExtensionImpl implements JandexExtension {
 
     @Inject
     JandexExtensionImpl(ObjectFactory objects) {
-        version = objects.property(String).convention('2.4.3.Final')
+        version = objects.property(String).convention('3.0.0')
     }
 }

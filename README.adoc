@@ -5,7 +5,7 @@
 :project-name:    jandex-gradle-plugin
 :project-group:   org.kordamp.gradle
 :project-version: 0.13.2
-:jandex-version:  2.4.3.Final
+:jandex-version:  3.0.0
 :plugin-id:       {project-group}.jandex
 
 image:https://github.com/{project-owner}/{project-name}/workflows/Build/badge.svg["Build Status", link="https://github.com/{project-owner}/{project-name}/actions"]
@@ -14,7 +14,7 @@ image:https://img.shields.io/maven-metadata/v?label=Plugin%20Portal&metadataUrl=
 
 ---
 
-Runs `link:https://github.com/wildfly/jandex[jandex]` on a Gradle project.
+Runs `link:https://github.com/smallrye/jandex[Jandex]` on a Gradle project.
 
 == Usage
 
@@ -83,11 +83,14 @@ Simply add the maven coordinates to the `jandex` extension as shown next
 [source,groovy]
 ----
 jandex {
-    version = '2.2.1.Final'
+    version = '3.0.0'
 }
 ----
 
 == Migration
+
+Starting with version `0.14.0`, this plugin only supports Jandex 3.0+ (`io.smallrye:jandex`).
+Attempts to configure an earlier Jandex version will result in a build failure.
 
 Starting with version `0.9.0` the chosen Jandex dependency must be resolved using explicit repositories, in other words,
 it is no longer part of the plugin's default classpath. Failure to declare a repository from which this dependency may be

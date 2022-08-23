@@ -54,7 +54,7 @@ repositories {
 dependencies {
     compileOnly gradleApi()
 
-    compileOnly "org.jboss:jandex:$jandexVersion"
+    compileOnly "io.smallrye:jandex:$jandexVersion"
     api "org.kordamp.gradle:base-gradle-plugin:$kordampPluginVersion"
 }
 

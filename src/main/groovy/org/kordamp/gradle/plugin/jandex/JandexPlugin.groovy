@@ -53,7 +53,12 @@ class JandexPlugin implements Plugin<Project> {
         jandexConfiguration.defaultDependencies(new Action<DependencySet>() {
             @Override
             void execute(DependencySet dependencies) {
-                dependencies.add(project.dependencies.create('org.jboss:jandex:' + jandexExtension.version.get()))
+                String version = jandexExtension.version.get()
+                if (version.startsWith("2.") || version.startsWith("1.")) {
+                    dependencies.add(project.dependencies.create('org.jboss:jandex:' + version))
+                } else {
+                    dependencies.add(project.dependencies.create('io.smallrye:jandex:' + version))
+                }
             }
         })
 
